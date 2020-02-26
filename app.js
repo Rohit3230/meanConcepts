@@ -3,68 +3,135 @@ var app        = express();                 // define our app using express
 var process = require('process');
 
 console.log('*******11');
-setImmediate(function(){console.log('*******11-1')});
+setImmediate(function(){console.log('setImmediate normal func*******11-1')});
 console.log('*******12');
-setImmediate(function(){console.log('*******12-1')},0);
+setImmediate(function(){console.log('setImmediate normal func*******12-1')},0);
 console.log('*******13');
-setImmediate(function(){console.log('*******13-1')});
+setImmediate(function(){console.log('setImmediate normal func*******13-1')});
 console.log('*******14');
-setImmediate(function(){ console.log('*******14-1')},0);
+setImmediate(function(){ console.log('setImmediate normal func*******14-1')},0);
 console.log('*******15');
 
 console.log('*******1');
-setImmediate(() => console.log('*******1-1'));
+setImmediate(() => console.log('setImmediate arrow func*******1-1'));
 console.log('*******2');
-setImmediate(() => console.log('*******2-1'),0);
+setImmediate(() => console.log('setImmediate arrow func*******2-1'),0);
 console.log('*******3');
-setImmediate(() => console.log('*******3-1'));
+setImmediate(() => console.log('setImmediate arrow func*******3-1'));
 console.log('*******4');
-setImmediate(() => console.log('*******4-1'),0);
+setImmediate(() => console.log('setImmediate arrow func*******4-1'),0);
 console.log('*******5');
 
 console.log('*******16');
-setTimeout(function(){console.log('*******16-1')});
+setTimeout(function(){console.log('setTimeout normal func*******16-1')});
 console.log('*******17');
-setTimeout(function(){console.log('*******17-1')},0);
+setTimeout(function(){console.log('setTimeout normal func*******17-1')},0);
 console.log('*******18');
-setTimeout(function(){console.log('*******18-1')});
+setTimeout(function(){console.log('setTimeout normal func*******18-1')});
 console.log('*******19');
-setTimeout(function(){ console.log('*******19-1')},0);
+setTimeout(function(){ console.log('setTimeout normal func*******19-1')},0);
 console.log('*******20');
 
 console.log('*******6');
-setTimeout(() => console.log('*******6-1'));
+setTimeout(() => console.log('setTimeout arrow func*******6-1'));
 console.log('*******7');
-setTimeout(() => console.log('*******7-1'),0);
+setTimeout(() => console.log('setTimeout arrow func*******7-1'),0);
 console.log('*******8');
-setTimeout(() => console.log('*******8-1'));
+setTimeout(() => console.log('setTimeout arrow func*******8-1'));
 console.log('*******9');
-setTimeout(() => console.log('*******9-1'),0);
+setTimeout(() => console.log('setTimeout arrow func*******9-1'),0);
 console.log('*******10');
 
 
 console.log('*******26');
-process.nextTick(() => console.log('*******26-1'));
+process.nextTick(() => console.log('process.nextTick arrow func*******26-1'));
 console.log('*******27');
-process.nextTick(() => console.log('*******27-1'),0);
+process.nextTick(() => console.log('process.nextTick arrow func*******27-1'),0);
 console.log('*******28');
-process.nextTick(() => console.log('*******28-1'));
+process.nextTick(() => console.log('process.nextTick arrow func*******28-1'));
 console.log('*******29');
-process.nextTick(() => console.log('*******29-1'),0);
+process.nextTick(() => console.log('process.nextTick arrow func*******29-1'),0);
 console.log('*******30');
 
 console.log('*******21');
-process.nextTick(function(){console.log('*******21-1')});
+process.nextTick(function(){console.log('process.nextTick normal func*******21-1')});
 console.log('*******22');
-process.nextTick(function(){console.log('*******22-1')},0);
+process.nextTick(function(){console.log('process.nextTick normal func*******22-1')},0);
 console.log('*******23');
-process.nextTick(function(){console.log('*******23-1')});
+process.nextTick(function(){console.log('process.nextTick normal func*******23-1')});
 console.log('*******24');
-process.nextTick(function(){ console.log('*******24-1')},0);
+process.nextTick(function(){ console.log('process.nextTick normal func*******24-1')},0);
 console.log('*******25');
 
 
 
+var fetchUrl = require("fetch").fetchUrl;
+
+// source file is iso-8859-15 but it is converted to utf-8 automatically
+fetchUrl("https://api.yogems.com/api/v0/activity/", function(error, meta, body){
+    // console.log(body.length);
+    console.log('*******11');
+    setImmediate(function(){console.log('setImmediate normal func*******11-1')});
+    console.log('*******12');
+    setImmediate(function(){console.log('setImmediate normal func*******12-1')},0);
+    console.log('*******13');
+    setImmediate(function(){console.log('setImmediate normal func*******13-1')});
+    console.log('*******14');
+    setImmediate(function(){ console.log('setImmediate normal func*******14-1')},0);
+    console.log('*******15');
+    
+    console.log('*******1');
+    setImmediate(() => console.log('setImmediate arrow func*******1-1'));
+    console.log('*******2');
+    setImmediate(() => console.log('setImmediate arrow func*******2-1'),0);
+    console.log('*******3');
+    setImmediate(() => console.log('setImmediate arrow func*******3-1'));
+    console.log('*******4');
+    setImmediate(() => console.log('setImmediate arrow func*******4-1'),0);
+    console.log('*******5');
+    
+    console.log('*******16');
+    setTimeout(function(){console.log('setTimeout normal func*******16-1')});
+    console.log('*******17');
+    setTimeout(function(){console.log('setTimeout normal func*******17-1')},0);
+    console.log('*******18');
+    setTimeout(function(){console.log('setTimeout normal func*******18-1')});
+    console.log('*******19');
+    setTimeout(function(){ console.log('setTimeout normal func*******19-1')},0);
+    console.log('*******20');
+    
+    console.log('*******6');
+    setTimeout(() => console.log('setTimeout arrow func*******6-1'));
+    console.log('*******7');
+    setTimeout(() => console.log('setTimeout arrow func*******7-1'),0);
+    console.log('*******8');
+    setTimeout(() => console.log('setTimeout arrow func*******8-1'));
+    console.log('*******9');
+    setTimeout(() => console.log('setTimeout arrow func*******9-1'),0);
+    console.log('*******10');
+    
+    
+    console.log('*******26');
+    process.nextTick(() => console.log('process.nextTick arrow func*******26-1'));
+    console.log('*******27');
+    process.nextTick(() => console.log('process.nextTick arrow func*******27-1'),0);
+    console.log('*******28');
+    process.nextTick(() => console.log('process.nextTick arrow func*******28-1'));
+    console.log('*******29');
+    process.nextTick(() => console.log('process.nextTick arrow func*******29-1'),0);
+    console.log('*******30');
+    
+    console.log('*******21');
+    process.nextTick(function(){console.log('process.nextTick normal func*******21-1')});
+    console.log('*******22');
+    process.nextTick(function(){console.log('process.nextTick normal func*******22-1')},0);
+    console.log('*******23');
+    process.nextTick(function(){console.log('process.nextTick normal func*******23-1')});
+    console.log('*******24');
+    process.nextTick(function(){ console.log('process.nextTick normal func*******24-1')},0);
+    console.log('*******25');
+
+});
 
 
 
