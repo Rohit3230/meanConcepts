@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "fetch": "^1.1.0",
     "process": "^0.11.10",
+    "request": "^2.88.2",
     "setimmediate": "^1.0.5"
   }
 }
