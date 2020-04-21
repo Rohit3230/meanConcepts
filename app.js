@@ -6,35 +6,41 @@ var test = function(mode) {
 
     console.log('Function Calling Mode:-------'+mode);
 
-setImmediate(function(){console.log('setImmediate normal func*******1')});
-setImmediate(function(){console.log('setImmediate normal func*******2')},0);
-setImmediate(function(){console.log('setImmediate normal func*******3')});
-setImmediate(function(){ console.log('setImmediate normal func*******4')},0);
+setImmediate(function(){console.log(mode,'****setImmediate normal func*******1')});
+setImmediate(function(){console.log(mode,'****setImmediate normal func*******2')},0);
 
-setImmediate(() => console.log('setImmediate arrow func*******5'));
-setImmediate(() => console.log('setImmediate arrow func*******6'),0);
-setImmediate(() => console.log('setImmediate arrow func*******7'));
-setImmediate(() => console.log('setImmediate arrow func*******8'),0);
+setImmediate(() => console.log(mode,'****setImmediate arrow func*******3'));
+setImmediate(() => console.log(mode,'****setImmediate arrow func*******4'),0);
 
-setTimeout(function(){console.log('setTimeout normal func*******9')});
-setTimeout(function(){console.log('setTimeout normal func*******10')},0);
-setTimeout(function(){console.log('setTimeout normal func*******11')});
-setTimeout(function(){ console.log('setTimeout normal func******12')},0);
+setImmediate(function(){console.log(mode,'****setImmediate normal func*******5')});
+setImmediate(function(){ console.log(mode,'****setImmediate normal func*******6')},0);
 
-setTimeout(() => console.log('setTimeout arrow func*******13'));
-setTimeout(() => console.log('setTimeout arrow func*******14'),0);
-setTimeout(() => console.log('setTimeout arrow func*******15'));
-setTimeout(() => console.log('setTimeout arrow func*******16'),0);
+setImmediate(() => console.log(mode,'****setImmediate arrow func*******7'));
+setImmediate(() => console.log(mode,'****setImmediate arrow func*******8'),0);
 
-process.nextTick(function(){console.log('process.nextTick normal func*******17')});
-process.nextTick(function(){console.log('process.nextTick normal func*******18')},0);
-process.nextTick(function(){console.log('process.nextTick normal func*******19')});
-process.nextTick(function(){ console.log('process.nextTick normal func*******20')},0);
+setTimeout(function(){console.log(mode,'****setTimeout normal func*******9')});
+setTimeout(function(){console.log(mode,'****setTimeout normal func*******10')},0);
 
-process.nextTick(() => console.log('process.nextTick arrow func*******21'));
-process.nextTick(() => console.log('process.nextTick arrow func*******22'),0);
-process.nextTick(() => console.log('process.nextTick arrow func*******23'));
-process.nextTick(() => console.log('process.nextTick arrow func*******24'),0);
+setTimeout(() => console.log(mode,'****setTimeout arrow func*******11'));
+setTimeout(() => console.log(mode,'****setTimeout arrow func*******12'),0);
+
+setTimeout(function(){console.log(mode,'****setTimeout normal func*******13')});
+setTimeout(function(){ console.log(mode,'****setTimeout normal func******14')},0);
+
+setTimeout(() => console.log(mode,'****setTimeout arrow func*******15'));
+setTimeout(() => console.log(mode,'****setTimeout arrow func*******16'),0);
+
+process.nextTick(function(){console.log(mode,'****process.nextTick normal func*******17')});
+process.nextTick(function(){console.log(mode,'****process.nextTick normal func*******18')},0);
+
+process.nextTick(() => console.log(mode,'****process.nextTick arrow func*******19'));
+process.nextTick(() => console.log(mode,'****process.nextTick arrow func*******20'),0);
+
+process.nextTick(function(){console.log(mode,'****process.nextTick normal func*******21')});
+process.nextTick(function(){ console.log(mode,'****process.nextTick normal func*******22')},0);
+
+process.nextTick(() => console.log(mode,'****process.nextTick arrow func*******23'));
+process.nextTick(() => console.log(mode,'****process.nextTick arrow func*******24'),0);
 
 
 }
