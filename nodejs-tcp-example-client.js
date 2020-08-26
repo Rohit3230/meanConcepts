@@ -1,6 +1,6 @@
 var net = require('net');
 var client = new net.Socket();
-client.connect(52275, '127.0.0.1', function() {
+client.connect(6991, '233.1.2.6', function() {
 	console.log('Connected');
 	client.write('Hello, server! Love, Client.RSN');
 });

@@ -14,7 +14,7 @@ var server = net.createServer(function(socket) {
 			console.log('Saved!');
 		});
 
-
+		console.log('INIT RunQuery Params****', textChunk);
 		runQuery('INSERT INTO `msgTest`(`msg`) VALUES (?)', [textChunk], function (err, result) { 
 			if(
 				err
@@ -27,8 +27,12 @@ var server = net.createServer(function(socket) {
 
 		socket.write(textChunk);
 	});
+
+	socket.on('error', (err) => console.log('Socket error:', err));
+
+
 });
-server.listen(52275, '127.0.0.1');
+server.listen(0001, '192.168.101.141');
 
 
 var mysql = require('mysql');
@@ -59,3 +63,5 @@ var runQuery = function runQuery(query, paramArr, callback) {
 
     });
 };
+
+// https://icy-succinct-governor.glitch.me/
