@@ -14,3 +14,6 @@ client.on('data', function(data) {
 client.on('close', function() {
 	console.log('Connection closed');
 });
+client.on('error', function(err) {
+	console.log('Error***',err);
+});
